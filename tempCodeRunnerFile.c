@@ -1,3 +1,3 @@
-0;i<*returnSize;i++){
-    //     printf("%d\n", ans[i]);
-    // }
+
+    char *ans = convertToTitle(n);
+    printf("%s\n", ans);
