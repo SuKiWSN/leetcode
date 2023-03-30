@@ -7,5 +7,5 @@ int cmp(const void* e1,const void* e2) {
 }
 
 int main(){
-    printf("%d\n", -4%3);
+    printf("%d %d\n", 'a', 'A');
 }

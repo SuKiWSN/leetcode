@@ -13,7 +13,6 @@ char * reformatNumber(char * number){
     int lenn = 0;
     while(i < strlen(number)){
         while(i < strlen(number) && (number[i] == '-' || number[i] == ' '))i++;
-        printf("%d\n", i);
         if(i < strlen(number))number[lenn++] = number[i];
         i++;
     }
