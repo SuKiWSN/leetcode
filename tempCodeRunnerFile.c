@@ -1,3 +1,4 @@
-
-    char *ans = convertToTitle(n);
-    printf("%s\n", ans);
+=0;i<numsSize;i++){
+    //     printf("%d ", res[i]);
+    // }
+    // printf("\n");
