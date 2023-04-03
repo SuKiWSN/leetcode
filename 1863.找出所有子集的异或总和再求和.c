@@ -12,6 +12,7 @@ void dfs(int *nums, int n, int i, int *sum, int *val){
         *sum += *val;
         return;
     }
+    // 选还是不选第i个元素
     dfs(nums, n, i+1, sum, val);
     (*val)^=nums[i];
     dfs(nums, n, i+1, sum, val);
