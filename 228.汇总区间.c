@@ -13,37 +13,35 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-char* itoa(int n){
-    static char res[21] = {0};
-    int i = 0;
-    while(n){
-        res[19-i] = n%10+'0';
-        n /= 10;
-        i++;
-    }
-    char *p;
-    p = res+20-i;
-    return p;
-}
 
+// 学会使用sprintf
 char ** summaryRanges(int* nums, int numsSize, int* returnSize){
-    char **res;
+    char **res = malloc(sizeof(char*)*(20));
     *returnSize = 0;
-    res = malloc(sizeof(char *) * 20);
-    *res = itoa(nums[0]);
-    int idx = 0;
-    for(int i=1;i<numsSize;i++){
-        while(nums[i] == nums[i-1]+1)i++;
-        res[idx] = malloc(21);
-        memset(res, 0, 21);
-        res[idx][]
+    for(int i=0;i<numsSize;i++){
+        int j=i+1;
+        while(j < numsSize && nums[j] == nums[j-1]+1)j++;
+        res[*returnSize] = malloc(sizeof(char)*(40));
+        memset(res[*returnSize], 0, 40);
+        sprintf(res[*returnSize]+strlen(res[*returnSize]), "%d", nums[i]);
+        if(i < j-1){
+            sprintf(res[*returnSize]+strlen(res[*returnSize]), "->%d", nums[j-1]);
+        }
+        (*returnSize)++;
+        i = j-1;
+
     }
+    return res;
 }
 // @lc code=end
 
 int main(){
-    int i=10;
-    char * res = itoa(i);
-    printf("%s\n", res);
+    int nums[6] = {0,2,3,4,6,9};
+    int *returnSize = malloc(sizeof(int));
+    char **res = summaryRanges(nums, 6, returnSize);
+    for(int i=0;i<*returnSize;i++){
+        printf("%s\n", res[i]);
+    }
     return 0;
+
 }
