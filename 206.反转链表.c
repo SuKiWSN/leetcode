@@ -3,7 +3,10 @@
  *
  * [206] 反转链表
  */
-
+struct ListNode {
+    int val;
+    struct ListNode *next;
+};
 // @lc code=start
 /**
  * Definition for singly-linked list.
